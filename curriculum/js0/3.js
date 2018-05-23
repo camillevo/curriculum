@@ -4,8 +4,10 @@
  * @returns {boolean}
  */
 
-const solution = (a) => {
-  return true;
+const solution = (a) =>{
+  if(a>5)
+    return true
+  else return false;
 };
 
 module.exports = {
