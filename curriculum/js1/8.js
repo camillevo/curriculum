@@ -5,8 +5,12 @@
  * @returns {number}
  */
 
-const solution = (a, b) => {
-  return 0;
+const solution = (a, b, c = Math.abs(b - a)) => {
+if (a === b) return a;
+
+if (b % c === 0 && a % c === 0) return c;
+
+return solution(a, b, c - 1);
 };
 
 module.exports = {
