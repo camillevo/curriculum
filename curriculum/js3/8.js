@@ -16,8 +16,11 @@
  * @returns {boolean}
 */
 
-const solution = (a)=>{
-  return true;
+const solution = (a, curr = a)=>{
+  if(!curr.next) return false;
+  if(curr.check) return true;
+  curr.check = "check";
+  return solution(a, curr = curr.next);
 };
 
 module.exports = {
