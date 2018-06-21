@@ -14,8 +14,12 @@
 */
 
 // Hint: BFS or DFS from the teaching doc
-const solution = (a)=>{
-  return a;
+const solution = (a, num, fam = [a])=>{
+  let curr = fam.shift();
+  if(curr.v === num) return curr;
+  fam = fam.concat(curr.children);
+  if(fam.length === 0) return;
+  return solution(a, num, fam);
 };
 
 module.exports = {
