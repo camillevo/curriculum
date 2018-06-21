@@ -7,8 +7,10 @@
  */
 
 const solution = () => {
-  Array.prototype.gsForEach = function () {
-    // To get the actual array, use this
+  Array.prototype.gsForEach = function (callBack, i = 0) {
+    if (i == this.length) return;
+    callBack(this[i]);
+    return this.gsForEach(callBack, i + 1);
   };
 };
 
