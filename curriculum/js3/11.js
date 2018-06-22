@@ -8,8 +8,10 @@
 // You can use helper functions like:
 //     Object.keys, Object.values, or Object.entries
 const solution = () => {
-  Object.prototype.gsForEach = function () {
-    // To get the actual object, use this
+  Object.prototype.gsForEach = function (callback, entries = Object.entries(this), i = 0) {
+    if(i === entries.length) return;
+    callback(entries[i][0], entries[i][1]);
+    return this.gsForEach(callback, entries, i + 1);
   };
 };
 
