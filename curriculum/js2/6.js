@@ -4,8 +4,12 @@
  * @returns {array}
  */
 
-const solution = (a) => {
-  return [];
+const solution = (a, i = 0, b = []) => {
+  if(i == a.length) return b;
+  if(a[i] > 5) {
+    b.push(a[i])
+  };
+  return solution(a, i + 1, b);
 };
 
 module.exports = {
